@@ -58,3 +58,11 @@ Changes to be committed:
         new file:   public/style.css
 
 ---------------------------------------------------
+
+D:\css-szkolenie\HTML-Geolocation-API>git status
+
+D:\css-szkolenie\HTML-Geolocation-API>git add .
+
+D:\css-szkolenie\HTML-Geolocation-API>git commit -am "poprawka"
+
+git push
