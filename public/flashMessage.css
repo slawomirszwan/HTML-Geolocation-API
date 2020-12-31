@@ -1,0 +1,25 @@
+.flash-message--container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: rgba(117, 117, 117, 0.575);
+}
+
+.flash-message--message {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.flash-message--close-button {
+  padding: 1rem;
+}
+
+.flash-message--message__success {
+  background-color: rgb(35, 182, 42);
+  color: white;
+}
+
+.flash-message--message__error {
+  background-color: rgb(216, 46, 33);
+  color: white;
+}
