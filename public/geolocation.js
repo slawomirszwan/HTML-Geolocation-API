@@ -311,16 +311,17 @@ const formatPosition = (position) => {
 
     //message => JSON.stringify(position) //stringify nie działa wgłąb prototype
  */
-  const text = `
-timestamp: ${new Date(position.timestamp).toLocaleString()}
-coords = {
-  accuracy: ${position.coords.accuracy}m
-​​  altitude: ${position.coords.altitude}
-​​  altitudeAccuracy: ${position.coords.altitudeAccuracy}
-​​  heading: ${position.coords.heading}
-​​  latitude: ${position.coords.latitude}
-​​  longitude: ${position.coords.longitude}
-​​  speed: ${position.coords.speed}
+  const text = `{
+  timestamp: ${new Date(position.timestamp).toLocaleString()}
+  coords = {
+    accuracy: ${position.coords.accuracy},
+  ​​  altitude: ${position.coords.altitude},
+  ​​  altitudeAccuracy: ${position.coords.altitudeAccuracy},
+  ​​  heading: ${position.coords.heading},
+  ​​  latitude: ${position.coords.latitude},
+  ​​  longitude: ${position.coords.longitude},
+  ​​  speed: ${position.coords.speed},
+  }
 }  
 `;
   return text;
@@ -335,12 +336,31 @@ const formatPositionError = (positionError) => {
           readonly POSITION_UNAVAILABLE: number;
           readonly TIMEOUT: number;
    */
-  const text = `
-code: ${positionError.code}
-message: ${positionError.message}
+  const text = `{
+  code: ${positionError.code},
+  message: ${positionError.message},
+}
 `;
   return text;
 };
+
+/**
+ * add view result in prototype types of result
+ */
+const addPrototype = () => {
+  if (!("show" in GeolocationPosition.prototype)) {
+    GeolocationPosition.prototype.show = function () {
+      return formatPosition(this);
+    };
+  }
+
+  if (!("show" in GeolocationPositionError.prototype)) {
+    GeolocationPositionError.prototype.show = function () {
+      return formatPositionError(this);
+    };
+  }
+};
+addPrototype();
 
 export {
   hasGeolocationApi,

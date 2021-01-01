@@ -1,10 +1,10 @@
 import {
   hasGeolocationApi,
   getCurrentPosition,
-  watchPosition,
-  clearWatch,
-  formatPosition,
-  formatPositionError,
+  // watchPosition,
+  // clearWatch,
+  // formatPosition,
+  // formatPositionError,
 } from "./geolocation.js";
 
 import { prepareEnvironment, addMessage } from "./flashMessage.js";
@@ -18,15 +18,16 @@ var getLocation = () => {
     (position) => {
       console.log(position);
       //message => JSON.stringify(position) //stringify nie działa wgłąb prototype
+
       addMessage({
-        message: `<pre>${formatPosition(position)}</pre>`,
+        message: `<pre>${position.show()}</pre>`,
         timeout: 20000,
       });
     },
     (positionError) => {
       console.log(positionError);
       addMessage({
-        message: `<pre>${formatPositionError(positionError)}</pre>`,
+        message: `<pre>${positionError.show()}</pre>`,
         type: "error",
       });
     }

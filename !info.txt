@@ -63,6 +63,52 @@ D:\css-szkolenie\HTML-Geolocation-API>git status
 
 D:\css-szkolenie\HTML-Geolocation-API>git add .
 
-D:\css-szkolenie\HTML-Geolocation-API>git commit -am "poprawka"
+D:\css-szkolenie\HTML-Geolocation-API>git commit -m "poprawka"
 
 git push
+
+
+https://dev.to/juni/git-and-github---must-know-commands-to-make-your-first-commit-333c
+
+Git task 	Notes 	Git commands
+Status 	List the files you've changed and those you still need to add or commit: 	
+git status
+
+Add files 	Add one or more files to staging (index): 	
+git add <filename>
+git add .
+
+Commit 	Commit changes to head (but not yet to the remote repository): 	
+git commit -m "Commit message"
+
+	Commit any files you've added with git add, and also commit any files you've changed since then: 	
+  git commit -a
+
+Push 	Send changes to the master branch of your remote repository: 	
+git push origin master
+
+Update from the remote repository 	Fetch and merge changes on the remote server to your working directory: 	
+git pull
+
+Branches 	Create a new branch and switch to it: 	
+git checkout -b <branchname>
+
+
+And finally some tips
+
+    Don’t EVER commit private keys / api keys/certificates.
+    Integrate linters and code checkers and beautifiers such as jsPrettier (but first ask your team first if they use any)
+    Use descriptive commit messages and branch names.
+    Create a branch for every new feature, and delete the branch once the feature is merged into main.
+    Tag your commit messages with the ticket number it corresponds with (if you are working in an agile environment)
+
+
+Nie uzywac
+git commit -am "poprawka"
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+git add --patch
+
+https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1
+
